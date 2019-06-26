@@ -1,12 +1,10 @@
 {
   "name": "language-delisp",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "Delisp language package for Atom",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tkers/language-delisp.git"
-  },
   "author": "Tijn Kersjes <tijn@divbyzero.nl>",
+  "repository": "https://github.com/tkers/language-delisp",
+  "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   }
