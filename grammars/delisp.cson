@@ -1,0 +1,77 @@
+'scopeName': 'source.delisp'
+'name': 'Delisp'
+'fileTypes': ['dl']
+'foldingStartMarker': '\\(\\s*$'
+'foldingStopMarker': '^\\s*\\)'
+'patterns': [
+  {
+    'include': '#constant'
+  }
+  {
+    'include': '#keyword'
+  }
+  {
+    'include': '#symbol'
+  }
+  {
+    'include': '#string'
+  }
+  {
+    'include': '#vector'
+  }
+  {
+    'include': '#record'
+  }
+]
+'repository':
+  'string':
+    'begin': '"'
+    'end': '"'
+    'name': 'string.quoted.double.delisp'
+  'symbol':
+    'patterns': [
+      {
+        'match': '\\b[^\\s]+\\b'
+        'name': 'meta.symbol.delisp'
+      }
+    ]
+  'keyword':
+    'patterns': [
+      {
+        'match': '\\b(define|lambda|if|let|export|do)\\b'
+        'name': 'keyword.control.delisp'
+      }
+    ]
+  'constant':
+    'patterns': [
+      {
+        'match': '\\b(nil)\\b'
+        'name': 'constant.language.nil.delisp'
+      }
+      {
+        'match': '\\b(true|false)\\b'
+        'name': 'constant.language.boolean.delisp'
+      }
+      {
+        'match': '\\b([0-9]+)\\b'
+        'name': 'constant.numeric.delisp'
+      }
+    ]
+  'vector':
+    'begin': '\\['
+    'end': '\\]'
+    'name': 'meta.vector.delisp'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
+  'record':
+    'begin': '\\{'
+    'end': '\\}'
+    'name': 'meta.record.delisp'
+    'patterns': [
+      {
+        'include': '$self'
+      }
+    ]
