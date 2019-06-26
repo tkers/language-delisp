@@ -1,0 +1,5 @@
+'.source.delisp':
+  'editor':
+    'commentStart': '; '
+  'autocomplete':
+    'extraWordCharacters': '-'
