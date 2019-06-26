@@ -16,3 +16,9 @@
         ${2:then}
         ${3:else})
     """
+  'let':
+    'prefix': 'let'
+    'body': """
+      (let {${1:bindings}}
+        ${2:form})
+    """

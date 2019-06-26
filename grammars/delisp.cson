@@ -8,6 +8,12 @@
     'include': '#constant'
   }
   {
+    'include': '#special'
+  }
+  {
+    'include': '#primitive'
+  }
+  {
     'include': '#keyword'
   }
   {
@@ -38,14 +44,46 @@
   'keyword':
     'patterns': [
       {
-        'match': '\\b(define|lambda|if|let|export|do)\\b'
+        'match': '([\\s\\(\\)\\[\\]\\{\\}])(:[^\\s]+)\\b'
+        'captures':
+          2:
+            'name': 'entity.tag.name.delisp'
+      }
+    ]
+  'special':
+    'patterns': [
+      {
+        'match': '\\(\\s*(define)\\s+(.+?)[\\s\\)]'
+        'captures':
+          1:
+            'name': 'keyword.control.delisp'
+          2:
+            'name': 'entity.function.name.delisp'
+      }
+      {
+        'match': '\\(\\s*(export)\\s+(.+?)[\\s\\)]'
+        'captures':
+          1:
+            'name': 'keyword.control.delisp'
+          2:
+            'name': 'entity.function.name.delisp'
+      }
+      {
+        'match': '\\b(lambda|if|let|do|the|type|cases|case|match|values)\\b'
         'name': 'keyword.control.delisp'
+      }
+    ]
+  'primitive':
+    'patterns': [
+      {
+        'match': '\\b(map|fold|filter|print|cons|append|string-append|reverse|length|get|set|pair|fst|snd)\\b'
+        'name': 'support.function.delisp'
       }
     ]
   'constant':
     'patterns': [
       {
-        'match': '\\b(nil)\\b'
+        'match': '\\b(none)\\b'
         'name': 'constant.language.nil.delisp'
       }
       {
