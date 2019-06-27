@@ -83,6 +83,10 @@
         'match': '\\b(and|not|or)\\b'
         'name': 'support.function.delisp'
       }
+      {
+        'match': '\\s(string|number|boolean|\\[number\\]|\\[string\\]|\\[boolean\\])\\s'
+        'name': 'entity.name.type.delisp'
+      }
     ]
   'constant':
     'patterns': [
