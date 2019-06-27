@@ -1,6 +1,6 @@
 {
   "name": "language-delisp",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Delisp language support for Atom",
   "author": "Tijn Kersjes <tijn@divbyzero.nl>",
   "repository": "https://github.com/tkers/language-delisp",
