@@ -44,9 +44,9 @@
   'keyword':
     'patterns': [
       {
-        'match': '([\\s\\(\\)\\[\\]\\{\\}])(:[^\\s]+)\\b'
+        'match': '[^\\B:](:[^\\s]+)\\b'
         'captures':
-          2:
+          1:
             'name': 'entity.tag.name.delisp'
       }
     ]
@@ -69,14 +69,18 @@
             'name': 'entity.function.name.delisp'
       }
       {
-        'match': '\\b(lambda|if|let|do|the|type|cases|case|match|values)\\b'
+        'match': '\\b(case|cases|do|if|lambda|let|match|multiple-value-bind|the|type|values)\\b'
         'name': 'keyword.control.delisp'
       }
     ]
   'primitive':
     'patterns': [
       {
-        'match': '\\b(map|fold|filter|print|cons|append|string-append|reverse|length|get|set|pair|fst|snd)\\b'
+        'match': '\\b(append|cons|filter|fold|fst|get|length|map|pair|print|reverse|set|snd|string-append|string-downcase|string-length|string-upcase|string=|zero?)\\b'
+        'name': 'support.function.delisp'
+      }
+      {
+        'match': '\\b(and|not|or)\\b'
         'name': 'support.function.delisp'
       }
     ]
@@ -93,6 +97,10 @@
       {
         'match': '\\b([0-9]+)\\b'
         'name': 'constant.numeric.delisp'
+      }
+      {
+        'match': '\\b(nil)\\b'
+        'name': 'constant.language.delisp'
       }
     ]
   'vector':
